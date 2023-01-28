@@ -6,9 +6,10 @@ import { setLoading, showToast } from "../redux/slices/appConfigSlice";
 import { TOAST_FAILURE } from "../App";
 
 
+
 let baseURL = "http://localhost:4000/";
 console.log("env is", process.env.NODE_ENV);
-if(process.env.NODE_ENV=='production'){
+if (process.env.NODE_ENV === 'production') {
     baseURL = process.env.REACT_APP_SERVER_BASE_URL
 }
 
@@ -17,7 +18,7 @@ export const axiosClient = axios.create({
     baseURL,
     withCredentials: true  // means allowing coolies 
 })
-  
+
 axiosClient.interceptors.request.use(
     (request) => {
         const acessToken = getItem(KEY_ACESS_TOKEN);
