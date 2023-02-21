@@ -5,7 +5,7 @@ import Follower from '../follower/Follower'
 import Post from '../post/Post'
 import './Feed.scss'
 
-const Feed = () => {
+const Feed = () => {  
 
     const dispatch = useDispatch();
     const feedData = useSelector((state) => state.feedDataReducer.feedData);

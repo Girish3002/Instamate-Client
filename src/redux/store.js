@@ -1,12 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 import appConfigReducer from './slices/appConfigSlice'
-import postsReducer from './slices/postsSlice'
+import postReducer from './slices/postsSlice'
 import feedDataReducer from './slices/feedSlice'
+import commentReducer from './slices/commentSlice'
+import exploreReducer from "./slices/exploreSlice";
 
 export default configureStore({
     reducer: {
         appConfigReducer,
-        postsReducer,
-        feedDataReducer
+        postReducer,
+        feedDataReducer,
+        commentReducer,
+        exploreReducer
     }
 })

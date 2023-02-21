@@ -4,48 +4,67 @@ import { Link, useNavigate } from 'react-router-dom';
 import { axiosClient } from '../../utils/axiosClient';
 import { KEY_ACESS_TOKEN, setItem } from '../../utils/localStorageManager';
 
-const Login = () => {
+function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         try {
-            const response = await axiosClient.post('/auth/login', {
+            const response = await axiosClient.post("/auth/login", {
                 email,
-                password
+                password,
             });
-            setItem(KEY_ACESS_TOKEN, response.result.acessToken)
-            navigate('/');
 
+            setItem(KEY_ACESS_TOKEN, response.result.acessToken);
+            navigate("/");
         } catch (error) {
-            console.log(error)
-
+            console.log(error);
         }
-
-    }
-
+    };
 
     return (
-        <div className='Login'>
+        <div className="login">
             <div className="login-box">
-                <h2 className="heading">Login</h2>
+                <h1 className="heading">Instamate</h1>
+
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="email">Email</label>
-                    <input type="email" className='email' id='email' onChange={(e) => { setEmail(e.target.value) }} />
+                    <input
+                        type="email"
+                        className="email"
+                        id="email"
+                        placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
 
                     <label htmlFor="password">Password</label>
-                    <input type="password" className='password' id='password' onChange={(e) => { setPassword(e.target.value) }} />
+                    <input
+                        type="password"
+                        className="password"
+                        id="password"
+                        placeholder="Password"
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
 
-                    <input type="submit" className='submit' />
+                    <input type="submit" className="submit" value="Log in" />
                 </form>
 
-                <p className="subheading">Do not have an account? <Link to="/signup">Sign Up</Link> </p>
-            </div>
+                <div className="lines-text">
+                    <span>OR</span>
+                </div>
 
+                <p className="bottom-heading">
+                    Don't have an account?
+                    <span>
+                        <Link to="/signup">Sign Up</Link>
+                    </span>
+                </p>
+            </div>
         </div>
-    )
+    );
 }
 
-export default Login
+export default Login;

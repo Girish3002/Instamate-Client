@@ -1,7 +1,6 @@
 import axios from "axios";
 import { getItem, KEY_ACESS_TOKEN, removeItem, setItem } from "./localStorageManager";
 import store from "../redux/store";
-// import store from "../redux/store";
 import { setLoading, showToast } from "../redux/slices/appConfigSlice";
 import { TOAST_FAILURE } from "../App";
 
@@ -16,13 +15,12 @@ if (process.env.NODE_ENV === 'production') {
 
 export const axiosClient = axios.create({
     baseURL,
-    withCredentials: true  // means allowing coolies 
+    withCredentials: true  // means allowing cookies 
 })
 
 axiosClient.interceptors.request.use(
     (request) => {
         const acessToken = getItem(KEY_ACESS_TOKEN);
-        console.log(acessToken)
         request.headers['Authorization'] = `Bearer ${acessToken}`;
         store.dispatch(setLoading(true));
         return request;
@@ -49,13 +47,10 @@ axiosClient.interceptors.response.use(
 
         // means acess token has expired
         if (statusCode === 401 && !originalRequest._retry) {
-            // const response = await axios.get('http://localhost:4000/auth/refresh');
             originalRequest._retry = true
             const response = await axios
                 .create({ withCredentials: true, })
                 .get(`${process.env.REACT_APP_SERVER_BASE_URL}/auth/refresh`)
-            console.log("response from backend", response);
-
 
             if (response.data.status === 'ok') {
                 setItem(KEY_ACESS_TOKEN, response.data.result.acessToken);
@@ -67,10 +62,9 @@ axiosClient.interceptors.response.use(
                 window.location.replace('/login', '_self')
                 return Promise.reject(error)
             }
-
         }
-
         return Promise.reject(error);
+
     }, async (error) => {
         store.dispatch(setLoading(false));
         store.dispatch(showToast({
