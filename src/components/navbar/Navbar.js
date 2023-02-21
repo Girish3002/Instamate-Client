@@ -57,7 +57,8 @@ function Navbar({ darkMode, toggleDarkMode }) {
                             fillRule="evenodd"
                         />
                     </svg> */}
-                    <h1>Instamate</h1>
+                    <h1 className="insta-name-icon">Instamate</h1>
+                    <h1 className="insta-icon">Instamate</h1>
 
                 </div>
 
