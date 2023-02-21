@@ -1,22 +1,29 @@
-.Feed{
-    margin-top: 60px;
-    padding-inline: 30px;
+.Feed {
+  margin-top: 60px;
+  padding-inline: 30px;
 
-    .container{
-        display: flex;
-        gap: 20px;
-    }
-    .left-part{
-        flex : 2;
-    }
-    .right-part{
-        flex: 1;
-        margin-top: 20px;
-    }
-    .suggestions{
-        margin-top: 40px;
-    }
-    .title{
-        margin-bottom: 12px;
-    }
+  .container {
+    display: flex;
+    gap: 20px;
+  }
+  .left-part {
+    flex: 2;
+  }
+  .right-part {
+    flex: 1;
+    margin-top: 20px;
+  }
+  .suggestions {
+    margin-top: 40px;
+  }
+  .title {
+    margin-bottom: 12px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .right-part {
+    display: none;
+    margin-top: 30px;
+    gap: 30px;
+  }
 }
