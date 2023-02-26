@@ -1,17 +1,21 @@
-.Follower{
+.Follower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  h5{
+    cursor: pointer;
+  }
+
+  .user-info {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 60px;
+    gap: 20px;
+    cursor: pointer;
+  }
 
-    .user-info{
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        cursor: pointer;
-    }
-
-    .follow-link{
-        color:var(--accent-color);
-    }
+  .follow-link {
+    color: var(--accent-color);
+    
+  }
 }
