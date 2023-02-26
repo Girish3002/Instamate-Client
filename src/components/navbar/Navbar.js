@@ -7,6 +7,8 @@ import DropDown from "./dropdown/DropDown";
 import CreatePost from "../createPost/CreatePost";
 import SearchUser from "../searchUser/SearchUser";
 
+
+
 function Navbar({ darkMode, toggleDarkMode }) {
     const navigate = useNavigate();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -26,7 +28,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
         <div className={darkMode ? "Navbar dark-mode" : "Navbar"}>
             <div className="nav-container">
                 <div className="banner" onClick={() => navigate("/")}>
-                    {/* <svg
+                    <svg
                         xmlns="http://www.w3.org/2000/svg"
                         aria-label="Instagram"
                         className="_ab6- insta-icon"
@@ -39,7 +41,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
                     >
                         <path d="M12 2.982c2.937 0 3.285.011 4.445.064a6.087 6.087 0 0 1 2.042.379 3.408 3.408 0 0 1 1.265.823 3.408 3.408 0 0 1 .823 1.265 6.087 6.087 0 0 1 .379 2.042c.053 1.16.064 1.508.064 4.445s-.011 3.285-.064 4.445a6.087 6.087 0 0 1-.379 2.042 3.643 3.643 0 0 1-2.088 2.088 6.087 6.087 0 0 1-2.042.379c-1.16.053-1.508.064-4.445.064s-3.285-.011-4.445-.064a6.087 6.087 0 0 1-2.043-.379 3.408 3.408 0 0 1-1.264-.823 3.408 3.408 0 0 1-.823-1.265 6.087 6.087 0 0 1-.379-2.042c-.053-1.16-.064-1.508-.064-4.445s.011-3.285.064-4.445a6.087 6.087 0 0 1 .379-2.042 3.408 3.408 0 0 1 .823-1.265 3.408 3.408 0 0 1 1.265-.823 6.087 6.087 0 0 1 2.042-.379c1.16-.053 1.508-.064 4.445-.064M12 1c-2.987 0-3.362.013-4.535.066a8.074 8.074 0 0 0-2.67.511 5.392 5.392 0 0 0-1.949 1.27 5.392 5.392 0 0 0-1.269 1.948 8.074 8.074 0 0 0-.51 2.67C1.012 8.638 1 9.013 1 12s.013 3.362.066 4.535a8.074 8.074 0 0 0 .511 2.67 5.392 5.392 0 0 0 1.27 1.949 5.392 5.392 0 0 0 1.948 1.269 8.074 8.074 0 0 0 2.67.51C8.638 22.988 9.013 23 12 23s3.362-.013 4.535-.066a8.074 8.074 0 0 0 2.67-.511 5.625 5.625 0 0 0 3.218-3.218 8.074 8.074 0 0 0 .51-2.67C22.988 15.362 23 14.987 23 12s-.013-3.362-.066-4.535a8.074 8.074 0 0 0-.511-2.67 5.392 5.392 0 0 0-1.27-1.949 5.392 5.392 0 0 0-1.948-1.269 8.074 8.074 0 0 0-2.67-.51C15.362 1.012 14.987 1 12 1Zm0 5.351A5.649 5.649 0 1 0 17.649 12 5.649 5.649 0 0 0 12 6.351Zm0 9.316A3.667 3.667 0 1 1 15.667 12 3.667 3.667 0 0 1 12 15.667Zm5.872-10.859a1.32 1.32 0 1 0 1.32 1.32 1.32 1.32 0 0 0-1.32-1.32Z" />
                     </svg>
-                    <svg
+                    {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         aria-label="Instagram"
                         className="_ab6- insta-name-icon"
@@ -58,7 +60,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
                         />
                     </svg> */}
                     <h1 className="insta-name-icon">Instamate</h1>
-                    <h1 className="insta-icon">Instamate</h1>
+                    <h1 className="insta-icon-mob">Instamate</h1>
 
                 </div>
 
@@ -312,41 +314,8 @@ function Navbar({ darkMode, toggleDarkMode }) {
                             </div>
                             <span>Profile</span>
                         </li>
-                        <li className="nav-link settings"
-                            onClick={() => navigate("/updateProfile")}>
-                            <span>Settings</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-label="Settings"
-                                className="_ab6-"
-                                color="#262626"
-                                fill="#262626"
-                                height="24"
-                                role="img"
-                                viewBox="0 0 24 24"
-                                width="24"
-                            >
-                                <circle
-                                    cx="12"
-                                    cy="12"
-                                    fill="none"
-                                    r="8.635"
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                />
-                                <path
-                                    d="M14.232 3.656a1.269 1.269 0 0 1-.796-.66L12.93 2h-1.86l-.505.996a1.269 1.269 0 0 1-.796.66m-.001 16.688a1.269 1.269 0 0 1 .796.66l.505.996h1.862l.505-.996a1.269 1.269 0 0 1 .796-.66M3.656 9.768a1.269 1.269 0 0 1-.66.796L2 11.07v1.862l.996.505a1.269 1.269 0 0 1 .66.796m16.688-.001a1.269 1.269 0 0 1 .66-.796L22 12.93v-1.86l-.996-.505a1.269 1.269 0 0 1-.66-.796M7.678 4.522a1.269 1.269 0 0 1-1.03.096l-1.06-.348L4.27 5.587l.348 1.062a1.269 1.269 0 0 1-.096 1.03m11.8 11.799a1.269 1.269 0 0 1 1.03-.096l1.06.348 1.318-1.317-.348-1.062a1.269 1.269 0 0 1 .096-1.03m-14.956.001a1.269 1.269 0 0 1 .096 1.03l-.348 1.06 1.317 1.318 1.062-.348a1.269 1.269 0 0 1 1.03.096m11.799-11.8a1.269 1.269 0 0 1-.096-1.03l.348-1.06-1.317-1.318-1.062.348a1.269 1.269 0 0 1-1.03-.096"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                />
-                            </svg>
-                        </li>
 
-                        {/* <li
+                        <li
                             className={`nav-link more-nav ${isDropdownOpen ? "open" : ""
                                 }`}
                             onClick={handleMoreClick}
@@ -413,7 +382,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
                                 </svg>
                             )}
                             <span>More</span>
-                        </li> */}
+                        </li>
                         {isDropdownOpen && (
                             <DropDown
                                 isDropdownOpen={isDropdownOpen}
@@ -501,3 +470,4 @@ function Navbar({ darkMode, toggleDarkMode }) {
 }
 
 export default Navbar;
+

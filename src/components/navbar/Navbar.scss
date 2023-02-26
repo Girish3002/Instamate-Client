@@ -41,14 +41,9 @@
 
       .insta-icon {
         display: none;
-        font-family: "Lobster", cursive;
-        font-weight: 400;
-        position: fixed;
-        top: 0;
-        margin-left: 10px;
-        width: -webkit-fill-available;
-
-        padding-top: 15px;
+      }
+      .insta-icon-mob {
+        display: none;
       }
     }
 
@@ -69,11 +64,6 @@
       svg {
         transition: 0.2s;
       }
-    }
-    .settings {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
     }
 
     .nav-link:active {
@@ -114,13 +104,16 @@
     background-color: black;
     color: white;
 
-    .insta-icon {
-      background-color: black;
-    }
-
     .nav-link:hover {
       background-color: rgba(32, 32, 32, 0.46);
     }
+    .nav-container{
+    .banner{
+      .insta-icon-mob {
+        background-color: black;
+      }
+    }
+  }
 
     svg {
       color: white;
@@ -129,15 +122,24 @@
   }
 }
 
-// @media screen and (max-width: 1400px) {
-//   .Navbar {
-//     .nav-container {
-//       .more-nav {
-//         display: none;
-//       }
-//     }
-//   }
-// }
+@media screen and (max-width: 1400px) {
+  .Navbar {
+    .nav-container {
+      .more-nav {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1400px) {
+  .Navbar {
+    .nav-container {
+      .more-nav {
+        display: none;
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 1262px) {
   .Navbar {
@@ -161,8 +163,6 @@
 
         .insta-icon {
           display: block;
-          margin-left: 0;
-          // position: ;
         }
 
         .insta-icon:hover {
@@ -193,13 +193,26 @@
         display: flex;
       }
 
-      .banner {
-        .insta-icon {
-          margin-left: 10px;
-        }
-      }
+      // .banner,
       .more {
         display: none;
+      }
+      .banner {
+        .insta-icon{
+          display: none;
+        }
+        .insta-icon-mob {
+          display: block;
+          font-family: "Lobster", cursive;
+          font-weight: 400;
+          position: fixed;
+          top: 0;
+          left: 0;
+          padding-left: 10px;
+          width: -webkit-fill-available;
+          background-color: white;
+          padding-top: 15px;
+        }
       }
 
       .nav-links-container {
@@ -207,8 +220,6 @@
           display: flex;
           width: 100%;
           justify-content: space-evenly;
-          position: fixed;
-          bottom: 0;
         }
       }
     }
