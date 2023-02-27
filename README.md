@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Instamate
 
 ## Description
@@ -29,8 +27,6 @@ Overall, Instamate is a passion project that I am proud to have developed and I 
 
 [![Instamate](https://img.youtube.com/vi/YD0dkptTlZE/0.jpg)](https://www.youtube.com/watch?v=YD0dkptTlZE)
 
- `[Instamate video](https://www.youtube.com/watch?v=YD0dkptTlZE "Instamate video")`.
-
 ## Contributing
 
 If you'd like to contribute to Instamate, please fork the repository and submit a pull request with your changes. We're always looking for new features, bug fixes, and performance improvements.
@@ -38,4 +34,4 @@ If you'd like to contribute to Instamate, please fork the repository and submit 
 ## License
 
 Instamate is released under the MIT License.
->>>>>>> 61d62ee163af44276dc39cad15d48dd2c2c57977
+
