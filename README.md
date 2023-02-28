@@ -25,7 +25,7 @@ Overall, Instamate is a passion project that I am proud to have developed and I 
 
 ## Video Demo
 
-[![Instamate](https://img.youtube.com/vi/YD0dkptTlZE/0.jpg)](https://www.youtube.com/watch?v=YD0dkptTlZE)
+https://user-images.githubusercontent.com/104881595/221760523-193ef6f9-1131-45c4-b4cc-066ef0969366.mp4
 
 ## Contributing
 
