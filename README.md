@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Instamate
 
 ## Description
@@ -27,7 +25,7 @@ Overall, Instamate is a passion project that I am proud to have developed and I 
 
 ## Video Demo
 
-[Insert a video demo of your app here. You can use the following markdown code to embed a YouTube video: `![Alt text](https://www.youtube.com/watch?v=VIDEO_ID "Optional title")`.]
+[![Instamate](https://img.youtube.com/vi/YD0dkptTlZE/0.jpg)](https://www.youtube.com/watch?v=YD0dkptTlZE)
 
 ## Contributing
 
@@ -36,4 +34,4 @@ If you'd like to contribute to Instamate, please fork the repository and submit 
 ## License
 
 Instamate is released under the MIT License.
->>>>>>> 61d62ee163af44276dc39cad15d48dd2c2c57977
+
