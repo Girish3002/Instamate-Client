@@ -139,6 +139,13 @@
   .CreatePost {
     .create-container {
       background-color: #262626;
+
+      .top-bar {
+        background-color: black;
+      }
+      .create-box {
+        background-color: black;
+      }
     }
 
     textarea {
@@ -177,7 +184,6 @@
 
       .top-bar {
         padding: 20px;
-        background-color: black;
       }
 
       .create-box {
@@ -185,7 +191,6 @@
         flex-direction: column-reverse;
         height: 100vh;
         justify-content: space-between;
-        background-color: black;
 
         .create-right-part {
           flex: 1;
