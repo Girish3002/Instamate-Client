@@ -5,14 +5,14 @@ import Follower from '../follower/Follower'
 import Post from '../post/Post'
 import './Feed.scss'
 
-const Feed = () => {  
+const Feed = () => {
 
     const dispatch = useDispatch();
     const feedData = useSelector((state) => state.feedDataReducer.feedData);
 
     useEffect(() => {
         dispatch(getFeedData());
-    }, [dispatch])
+    },[dispatch])
     return (
         <div className='Feed'>
             <div className="container">

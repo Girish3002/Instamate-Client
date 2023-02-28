@@ -46,7 +46,9 @@
         display: none;
       }
     }
-
+    .insta-icon-mob-2 {
+      display: none;
+    }
     .banner:active {
       opacity: 0.55;
     }
@@ -107,13 +109,13 @@
     .nav-link:hover {
       background-color: rgba(32, 32, 32, 0.46);
     }
-    .nav-container{
-    .banner{
-      .insta-icon-mob {
-        background-color: black;
-      }
+    .nav-container {
+     
+        .insta-icon-mob-2 {
+          background-color: black;
+        }
+      
     }
-  }
 
     svg {
       color: white;
@@ -193,26 +195,25 @@
         display: flex;
       }
 
-      // .banner,
+      .banner,
       .more {
         display: none;
       }
-      .banner {
-        .insta-icon{
-          display: none;
-        }
-        .insta-icon-mob {
-          display: block;
-          font-family: "Lobster", cursive;
-          font-weight: 400;
-          position: fixed;
-          top: 0;
-          left: 0;
-          padding-left: 10px;
-          width: -webkit-fill-available;
-          background-color: white;
-          padding-top: 15px;
-        }
+
+      .insta-icon {
+        display: none;
+      }
+      .insta-icon-mob-2 {
+        display: block;
+        font-family: "Lobster", cursive;
+        font-weight: 400;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-left: 10px;
+        width: -webkit-fill-available;
+        background-color: white;
+        padding-top: 15px;
       }
 
       .nav-links-container {

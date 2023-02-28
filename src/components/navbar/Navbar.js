@@ -43,7 +43,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
                     </svg>
                     {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        aria-label="Instagram"
+                        aria-label="Instagram"      
                         className="_ab6- insta-name-icon"
                         color="#262626"
                         fill="#262626"
@@ -63,6 +63,7 @@ function Navbar({ darkMode, toggleDarkMode }) {
                     <h1 className="insta-icon-mob">Instamate</h1>
 
                 </div>
+                <h1 className="insta-icon-mob-2">Instamate</h1>
 
                 <div className="nav-links-container">
                     <ul>

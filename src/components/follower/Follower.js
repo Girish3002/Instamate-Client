@@ -5,31 +5,31 @@ import { followAndUnfollowUser } from '../../redux/slices/feedSlice'
 import Avatar from '../avatar/Avatar'
 import "./Follower.scss"
 
-const Follower = ({user}) => {
+const Follower = ({ user }) => {
 
   const dispatch = useDispatch();
-  const feedData = useSelector((state)=> state.feedDataReducer.feedData);
+  const feedData = useSelector((state) => state.feedDataReducer.feedData);
   const navigate = useNavigate();
 
   // is following ka logic hum backend se bhi la sakte hain like isLike but idhar he kaise karte hai wo is following me dekh leta hain
-  const [isFollowing,setIsFollowing] = useState();
+  const [isFollowing, setIsFollowing] = useState();
 
-  useEffect(()=>{
+  useEffect(() => {
     setIsFollowing(feedData.followings.find(item => item._id === user._id))
-  },[feedData])
+  }, [feedData, user._id, dispatch])
 
-  function handleUserFollow(){
+  function handleUserFollow() {
     dispatch(followAndUnfollowUser({
       userIdToFollow: user._id
     }))
   }
   return (
     <div className='Follower'>
-        <div className="user-info"  onClick={() => navigate(`/profile/${user._id}`) }>
-        <Avatar src={user?.avatar?.url}/>
+      <div className="user-info" onClick={() => navigate(`/profile/${user._id}`)}>
+        <Avatar src={user?.avatar?.url} />
         <h4 className='name'>{user?.name}</h4>
-        </div>
-        <h5 onClick={handleUserFollow} className={isFollowing? "hover-link follow-link": "btn-primary" }>{isFollowing ? "Unfollow" : "Follow"}</h5>  
+      </div>
+      <h5 onClick={handleUserFollow} className={isFollowing ? "hover-link follow-link" : "btn-primary"}>{isFollowing ? "Unfollow" : "Follow"}</h5>
     </div>
   )
 }
