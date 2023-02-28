@@ -20,7 +20,7 @@ Overall, Instamate is a passion project that I am proud to have developed and I 
 - Search functionality to find specific users or content
 - Responsive design for optimal viewing on different devices
 ## Screenshots
-![image](https://user-images.githubusercontent.com/104881595/221766214-110808e1-c835-418a-abe0-2c73c05c595c.png) ![image](https://user-images.githubusercontent.com/104881595/221766530-100a1776-6f70-4097-b1da-b38e811c3b76.png) ![image](https://user-images.githubusercontent.com/104881595/221767578-ea9c10c3-2b73-4e0d-856a-d4b69d3ae516.png)  ![image](https://user-images.githubusercontent.com/104881595/221767994-b04dc519-9ba5-4d82-a6df-c0a46ffb5a03.png)
+![image](https://user-images.githubusercontent.com/104881595/221766214-110808e1-c835-418a-abe0-2c73c05c595c.png) ![image](https://user-images.githubusercontent.com/104881595/221766530-100a1776-6f70-4097-b1da-b38e811c3b76.png) ![image](https://user-images.githubusercontent.com/104881595/221767994-b04dc519-9ba5-4d82-a6df-c0a46ffb5a03.png)
 
 ![image](https://user-images.githubusercontent.com/104881595/221768412-8a85e583-c8b3-4141-8d8c-fac650165054.png)
 
