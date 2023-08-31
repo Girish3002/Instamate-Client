@@ -5,7 +5,6 @@ import { likeAndUnlikePost } from "./postsSlice";
 export const getFeedData = createAsyncThunk('user/getFeedData', async () => {
     try {
         const response = await axiosClient.get('/user/getFeedData');
-        console.log("Feed data", response)
         return response.result;
     } catch (e) {
         return Promise.reject(e);
