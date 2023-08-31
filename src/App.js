@@ -66,24 +66,15 @@ function App() {
   };
   return (
 
-
     <div className={darkMode ? "App dark-mode" : "App"}>
       <LoadingBar color={darkMode ? "white" : "#000"} ref={loadingRef} />
       <div>
         <Toaster />
       </div>
-
       <Routes>
         
         <Route element={<RequireUser />}>
-          <Route
-            element={
-              <Home
-                darkMode={darkMode}
-                toggleDarkMode={toggleDarkMode}
-              />
-            }
-          >
+          <Route element={ <Home darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}>
             <Route path="/" element={<Feed />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/profile/:userId" element={<Profile />} />

@@ -21,35 +21,87 @@ export const followAndUnfollowUser = createAsyncThunk("user/followAndUnfollow", 
     }
 })
 
+// const feedSlice = createSlice({
+//     name: 'feedSlice',
+//     initialState: {
+//         feedData: {}
+//     },
+//     extraReducers: (builder) => {
+//         builder
+//             .addCase(getFeedData.fulfilled, (state, action) => {
+//                 state.feedData = action.payload;
+//             })
+//             .addCase(likeAndUnlikePost.fulfilled, (state, action) => {
+//                 const post = action.payload;
+
+//                 const index = state?.feedData?.posts?.findIndex((item) => item._id === post._id);
+//                 if (index != undefined && index != -1) {
+//                     state.feedData.posts[index] = post;
+//                 }
+//             })
+//             .addCase(followAndUnfollowUser.fulfilled, (state, action) => {
+//                 const user = action.payload;
+//                 const index = state?.feedData?.followings.findIndex((item) => item._id == user._id);
+
+//                 if (index != -1) {
+//                     state?.feedData.followings.splice(index, 1);
+//                 } else {
+//                     state?.feedData.followings.push(user);
+//                     state.feedData.suggestions = state.feedData.suggestions.filter((suggestion) => suggestion._id !== user._id);
+//                 }
+//             })
+
+//     }
+// })
+// export default feedSlice.reducer;
+
+
+// updated for follow and unfollow not working now working
 const feedSlice = createSlice({
     name: 'feedSlice',
     initialState: {
-        feedData: {}
+        feedData: {},
     },
     extraReducers: (builder) => {
         builder
             .addCase(getFeedData.fulfilled, (state, action) => {
                 state.feedData = action.payload;
             })
-            .addCase(likeAndUnlikePost.fulfilled, (state, action) => {
-                const post = action.payload;
-
-                const index = state?.feedData?.posts?.findIndex((item) => item._id === post._id);
-                if (index != undefined && index != -1) {
-                    state.feedData.posts[index] = post;
-                }
-            })
             .addCase(followAndUnfollowUser.fulfilled, (state, action) => {
                 const user = action.payload;
-                const index = state?.feedData?.followings.findIndex((item) => item._id == user._id);
+                const index = state?.feedData?.followings.findIndex((item) => item._id === user._id);
 
-                if (index != -1) {
-                    state?.feedData.followings.splice(index, 1);
+                if (index !== -1) {
+                    state.feedData.followings.splice(index, 1);
                 } else {
-                    state?.feedData.followings.push(user);
+                    state.feedData.followings.push(user);
+                }
+
+                const suggestionsIndex = state.feedData.suggestions.findIndex((item) => item._id === user._id);
+
+                if (suggestionsIndex !== -1) {
+                    state.feedData.suggestions.splice(suggestionsIndex, 1);
+                } else {
+                    state.feedData.suggestions.push(user);
                 }
             })
 
-    }
-})
+
+
+
+
+
+
+            .addCase(likeAndUnlikePost.fulfilled, (state, action) => {
+                const post = action.payload;
+                const postIndex = state.feedData.posts.findIndex((item) => item._id === post._id);
+
+                if (postIndex !== -1) {
+                    state.feedData.posts[postIndex] = post;
+                }
+            });
+    },
+});
+
 export default feedSlice.reducer;
+

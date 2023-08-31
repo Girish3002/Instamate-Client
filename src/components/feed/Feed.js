@@ -12,7 +12,9 @@ const Feed = () => {
 
     useEffect(() => {
         dispatch(getFeedData());
-    },[dispatch])
+    }, [dispatch])
+
+
     return (
         <div className='Feed'>
             <div className="container">

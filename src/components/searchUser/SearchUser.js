@@ -33,12 +33,18 @@ const SearchUser = ({ closeSearchBox, setOpenSearchBox, darkMode }) => {
                     <h2 className="head">Search</h2>
                 </div>
                 <div className="input-field">
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} >
                         <input
                             type="text"
                             placeholder="Search"
                             value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onChange={(e) => {
+                                setSearchQuery(e.target.value);
+
+                            }}
+                            onKeyUp=
+                            {searchQuery.length > 0 && handleSubmit}
+
                         />
                         <button type="submit">
                             <svg

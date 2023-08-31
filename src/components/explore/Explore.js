@@ -25,7 +25,7 @@ function Explore() {
         if (isPlaying) {
             videoRef.current.pause();
         } else {
-            videoRef.current.play();
+            videoRef.current.play();   
         }
         setIsPlaying(!isPlaying);
     };
