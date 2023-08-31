@@ -10,7 +10,6 @@ import { likeAndUnlikePost } from "../../redux/slices/postsSlice";
 import { useNavigate } from "react-router-dom";
 import Comments from "../comments/Comment";
 import PostOptions from "../postOptions/PostOptions";
-// import { Link, Element } from 'react-scroll';
 
 function Post({ post }) {
     const dispatch = useDispatch();
@@ -53,21 +52,9 @@ function Post({ post }) {
     }
     const handleComentClick = (index) => {
         setOpenComments(!openComments);
-        // console.log("into comment")
-        // const commentSection = commentRef.current;
-        // if (!commentSection) return;
-        //   const buttonTop = commentSection.getBoundingClientRect().top;
-        // Scroll to the comment section with an offset
-        // window.scrollTo({ top: buttonTop - 100, behavior: 'smooth' });       
-        // const buttonTop = commentRef.current.getBoundingClientRect().top;
-        // const buttonOffset = window.pageYOffset + buttonTop;
-
-        // Scroll to the comment section with an offset
-        // window.scrollTo({ top: buttonOffset - 100, behavior: 'smooth' });
         window.scrollTo({
             top: 0,
         });
-
     }
 
     let caption = post?.capton || "";

@@ -11,7 +11,6 @@ const Follower = ({ user }) => {
   const feedData = useSelector((state) => state.feedDataReducer.feedData);
   const navigate = useNavigate();
 
-  // is following ka logic hum backend se bhi la sakte hain like isLike but idhar he kaise karte hai wo is following me dekh leta hain
   const [isFollowing, setIsFollowing] = useState();
 
   useEffect(() => {

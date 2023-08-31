@@ -8,7 +8,6 @@ export const getUserProfile = createAsyncThunk('user/getUserProfile', async (bod
         console.log("inside postsldkf", response)
         return response.result;
     } catch (e) {
-        // console.log("inside postsslice")
         return Promise.reject(e);
     }
 })

@@ -6,9 +6,6 @@ const Avatar = ({src}) => {
   return (
     <div className='Avatar'>
         <img src={src?src :userImg} alt="user avatar" />
-        
-         
-      
     </div>
   )
 }

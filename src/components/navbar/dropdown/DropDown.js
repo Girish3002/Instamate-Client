@@ -1,12 +1,3 @@
-// import React from "react";
-// import {
-//     KEY_ACESS_TOKEN,
-//     removeItem,
-// } from "../../../utils/localStorageManager";
-// import { axiosClient } from "../../../utils/axiosClient";
-// import { useNavigate } from "react-router-dom";
-// import "./DropDown.scss";
-
 import React from "react";
 import {
     KEY_ACESS_TOKEN,

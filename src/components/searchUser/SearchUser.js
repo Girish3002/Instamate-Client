@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import userImage from "../../assets/user.png";
 import { axiosClient } from "../../utils/axiosClient";
@@ -10,17 +10,36 @@ const SearchUser = ({ closeSearchBox, setOpenSearchBox, darkMode }) => {
     const [searchResults, setSearchResults] = useState([]);
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const res = await axiosClient.post("/user/searchUser", {
-                searchQuery,
-            });
-            setSearchResults(res.result.user);
-        } catch (err) {
-            console.error(err.message);
-        }
-    };
+
+    useEffect(() => {
+        const timerId = setTimeout(async () => {
+            if (searchQuery) {
+                try {
+                    const res = await axiosClient.post("/user/searchUser", {
+                        searchQuery,
+                    });
+                    
+                    setSearchResults(res.result.user);
+                } catch (err) {
+                    console.error(err.message);
+                }
+            } else {
+                setSearchResults([]); 
+            }
+        }, 2000);
+
+        return () => {
+            clearTimeout(timerId);
+        };
+    }, [searchQuery]);
+
+    const handleButtonClick = async () => {
+        const res = await axiosClient.post("/user/searchUser", {
+            searchQuery,
+        });
+        console.log("time is", res.result.user)
+        setSearchResults(res.result.user);
+    }
 
     return (
         <div className={darkMode ? "SearchUser dark-mode" : "SearchUser"}>
@@ -33,7 +52,7 @@ const SearchUser = ({ closeSearchBox, setOpenSearchBox, darkMode }) => {
                     <h2 className="head">Search</h2>
                 </div>
                 <div className="input-field">
-                    <form onSubmit={handleSubmit} >
+                    <form  >
                         <input
                             type="text"
                             placeholder="Search"
@@ -42,11 +61,8 @@ const SearchUser = ({ closeSearchBox, setOpenSearchBox, darkMode }) => {
                                 setSearchQuery(e.target.value);
 
                             }}
-                            onKeyUp=
-                            {searchQuery.length > 0 && handleSubmit}
-
                         />
-                        <button type="submit">
+                        <button type="button" onClick={handleButtonClick}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 aria-label="Search"
